@@ -8,28 +8,8 @@ from math import inf
 from queue import Queue
 from typing import List
 
+from list_node import ListNode, list_to_linked_list
 from tree_node import TreeNode, list_to_binary_tree
-
-
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
-
-
-def list_to_linked_list(items):
-    head = None
-    for item in reversed(items):
-        head = ListNode(item, head)
-    return head
-
-
-def linked_list_to_string(head):
-    items = []
-    while head:
-        items.append(head.val)
-        head = head.next
-    return list_to_string(items)
 
 
 class Node:
@@ -74,16 +54,12 @@ def random_linked_list_to_string(head):
     return '[' + ', '.join(nodes) + ']'
 
 
-def list_to_string(items):
-    items = [str(entry) for entry in items]
-    return '[' + ', '.join(items) + ']'
-
-
 if __name__ == '__main__':
-    inputs = [
-        [1, 2, 3, 4, 5, None, 6, 7, None, None, None, None, 8],
-        [6, 7, 8, 2, 7, 1, 3, 9, None, 1, 4, None, None, None, 5],
+    heads = [
+        [1, 2, 3, 4, 5],
+        [1],
+        [1, 2],
     ]
-    for _input in inputs:
-        _root = list_to_binary_tree(_input)
-        print('root =', _input)
+    for head in heads:
+        head = list_to_linked_list(head)
+        print('Linked-List =', head)
