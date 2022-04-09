@@ -8,7 +8,7 @@ from math import inf
 from queue import Queue
 from typing import List
 
-from list_node import ListNode, list_to_linked_list
+from data_structure.list_node import ListNode
 from tree_node import TreeNode, list_to_binary_tree
 
 
@@ -60,6 +60,6 @@ if __name__ == '__main__':
         [1],
         [1, 2],
     ]
-    for head in heads:
-        head = list_to_linked_list(head)
-        print('Linked-List =', head)
+    for items in nodes:
+        head = ListNode(items=items)
+        print(f"Linked list: {head}")
