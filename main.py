@@ -8,7 +8,7 @@ from math import inf
 from queue import Queue
 from typing import List
 
-from data_structures.list_node import ListNode
+from data_structure.list_node import ListNode
 from tree_node import TreeNode, list_to_binary_tree
 
 
